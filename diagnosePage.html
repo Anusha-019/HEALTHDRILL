@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: Bright;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Diagnose</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-size: 18px; 
+            line-height: 1.6; 
+            font-family: Arial, Helvetica, sans-serif; 
+        }
+        .header {
+            background-color: #f9f9f9;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-heading-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-heading-container img {
+            margin-right: 10px;
+        }
+        .logo-heading-container h1 {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        .search-profile-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+        .search-bar .custom-search-bar {
+            width: 250px;
+            border-radius: 4px 0 0 4px;
+        }
+        .search-bar .btn-success {
+            border-radius: 0 4px 4px 0;
+        }
+        .profile-icon {
+            font-size: 28px;
+            color: #343434;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .profile-icon:hover {
+            color: #28a745;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        nav {
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        .nav-bar {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-bar li {
+            margin: 0 15px;
+        }
+        .nav-bar li a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #333;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .nav-bar li a:hover {
+            background-color: #28a745;
+        }
+        @media (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-bar li {
+                margin: 10px 0;
+            }
+        }
+        footer {
+            background: #343434;
+            padding-top: 50px;
+            margin-top: 120px;
+            font-size: 18px;
+        }
+        footer h3 {
+            font-size: 22px; 
+        }
+
+        footer p, 
+        footer ul li {
+            font-size: 18px; 
+        }
+
+        footer * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: white;
+        }
+
+        footer .footer-content {
+            width: 33.3%;
+            text-align: center;
+        }
+        footer .social-icons i {
+            color: white;
+            font-size: 30px;
+        }
+        footer a {
+            text-decoration: none;
+        }
+        footer a:hover, footer .social-icons i:hover {
+            color: #f18930;
+        }
+        .bottom-bar {
+            background: #f18930;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-heading-container">
+            <img src="logo.jpg" alt="HealthDrill Logo" height="50" width="50">
+            <h1>HealthDrill<br>Care and Knowledge Center</h1>
+        </div>
+        <div class="search-profile-container">
+            <div class="input-group search-bar">
+                <input type="text" class="form-control custom-search-bar" placeholder="Search...">
+                <div class="input-group-append">
+                    <button class="btn btn-success" type="button"><i class="fas fa-search"></i> Search</button>
+                </div>
+            </div>
+            <i class="fas fa-user profile-icon ml-3" title="User Profile"></i>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="mainhomepage.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="diagnosePage.html">Start Diagnose</a></li>
+            <li><a href="Bestdoctors.html">Best Doctors</a></li>
+            <li><a href="Besthospitals.html">Best Hospitals</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="container my-5">
+        
+        <h1 class="text-center">Health Symptom Checker</h1>
+        <form action="#" method="POST">
+            <div class="card p-4 mb-4 card-shadow">
+                <h4>General Information</h4>
+                <div class="form-group">
+                    <label for="age">What is your age?</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label>What is your gender?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="male" name="gender" value="Male" required>
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="female" name="gender" value="Female" required>
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="other" name="gender" value="Other" required>
+                        <label class="form-check-label" for="other">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-4 mb-4 card-shadow">
+                <h4>Medical History</h4>
+                <div class="form-group">
+                    <label>Have you ever been diagnosed with any diseases?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="diagnosis" id="diagnosis_yes" value="Yes" required>
+                        <label class="form-check-label" for="diagnosis_yes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="diagnosis" id="diagnosis_no" value="No" required>
+                        <label class="form-check-label" for="diagnosis_no">No</label>
+                    </div>
+                </div>
+                <div class="form-group" id="previous-disease" style="display:none;">
+                    <label>If yes, please specify the diseases you have been diagnosed with:</label>
+                    <textarea class="form-control" id="previous_disease" name="previous_disease" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="card p-4 mb-4 card-shadow">
+                <h4>Family History</h4>
+                <div class="form-group">
+                    <label>Does your family have a history of any diseases?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="family_history" id="family_history_yes" value="Yes" required>
+                        <label class="form-check-label" for="family_history_yes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="family_history" id="family_history_no" value="No" required>
+                        <label class="form-check-label" for="family_history_no">No</label>
+                    </div>
+                </div>
+                <div class="form-group" id="family-disease" style="display:none;">
+                    <label>If yes, please specify the diseases present in your family history:</label>
+                    <textarea class="form-control" id="family_disease" name="family_disease" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="card p-4 mb-4 card-shadow">
+                <h4>Current Symptoms</h4>
+                <div class="form-group">
+                    <label for="symptoms">Please describe your current symptoms:</label>
+                    <textarea class="form-control" id="symptoms" name="symptoms" rows="3" required></textarea>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-content col-md-4">
+                    <h3>Contact Us</h3>
+                    <p>Email: abc@gmail.com</p>
+                    <p>Phone: +91 565565656</p>
+                    <p>Address: Hyd 123 street</p>
+                </div>
+                <div class="footer-content col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content col-md-4">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons" style="display: flex; justify-content: center; gap: 15px; margin-top: 10px;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2024 HealthDrill. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const ageInput = document.getElementById('age');
+            const genderInputs = document.getElementsByName('gender');
+            const diagnosisInputs = document.getElementsByName('diagnosis');
+            const familyHistoryInputs = document.getElementsByName('family_history');
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            const previousDiseaseDiv = document.getElementById('previous-disease');
+            const familyDiseaseDiv = document.getElementById('family-disease');
+            
+            
+            function toggleDiseaseFields() {
+                const diagnosisYes = document.getElementById('diagnosis_yes');
+                const familyHistoryYes = document.getElementById('family_history_yes');
+                
+                previousDiseaseDiv.style.display = diagnosisYes.checked ? 'block' : 'none';
+                familyDiseaseDiv.style.display = familyHistoryYes.checked ? 'block' : 'none';
+            }
+        
+            
+            toggleDiseaseFields();
+            
+            
+            diagnosisInputs.forEach(input => input.addEventListener('change', toggleDiseaseFields));
+            familyHistoryInputs.forEach(input => input.addEventListener('change', toggleDiseaseFields));
+        
+            
+            function validateForm() {
+                let valid = true;
+                const errorMessages = [];
+        
+                
+                const age = ageInput.value.trim();
+                if (!age || isNaN(age) || age < 1) {
+                    valid = false;
+                    errorMessages.push('Please enter a valid age.');
+                }
+        
+
+                if (![...genderInputs].some(input => input.checked)) {
+                    valid = false;
+                    errorMessages.push('Please select your gender.');
+                }
+        
+                
+                const diagnosisYes = document.getElementById('diagnosis_yes');
+                const previousDisease = document.getElementById('previous_disease').value.trim();
+                if (diagnosisYes.checked && !previousDisease) {
+                    valid = false;
+                    errorMessages.push('Please specify any diseases you have been diagnosed with.');
+                }
+        
+                
+                const familyHistoryYes = document.getElementById('family_history_yes');
+                const familyDisease = document.getElementById('family_disease').value.trim();
+                if (familyHistoryYes.checked && !familyDisease) {
+                    valid = false;
+                    errorMessages.push('Please specify diseases in your family history.');
+                }
+        
+                
+                const symptoms = document.getElementById('symptoms').value.trim();
+                if (!symptoms) {
+                    valid = false;
+                    errorMessages.push('Please describe your symptoms.');
+                }
+        
+                
+                if (!valid) {
+                    displayFeedback(errorMessages.join('<br>'), 'error');
+                }
+        
+                return valid;
+            }
+        
+            
+            function displayFeedback(message, type) {
+                const feedbackDiv = document.createElement('div');
+                feedbackDiv.classList.add('feedback');
+                feedbackDiv.innerHTML = message;
+                feedbackDiv.classList.add(type);
+                form.prepend(feedbackDiv);
+        
+
+                setTimeout(() => feedbackDiv.remove(), 5000);
+            }
+        
+           
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission behavior
+
+                    if (validateForm()) {
+        // Show feedback message for successful validation
+        displayFeedback('Submitting your information, please wait...', 'info');
+
+        // Simulate processing time and navigate to Medications.html
+        setTimeout(function () {
+            window.location.href = 'Diagnisedresult.html';
+        }, 2000); // Delay to simulate processing
+    }
+});
+
+        });
+        </script>
+        
+</body>
+</html>
